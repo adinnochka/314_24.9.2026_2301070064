@@ -1,0 +1,14 @@
+Category,Variant,Threads,Run1_s,Run2_s,Run3_s,Avg_s,S_emp,S_theo,Delta,Throughput_iter_s,Hits,MaxSteps,MaxNumber,Checksum,ChunkSize
+Sequential,Baseline,1,6.56,6.046,6.072,6.059,,,,,,704,15733191,743737520,
+Parallel,OpenMP static,1,6.182,5.789,5.813,5.801,1.044475,1.0,-0.044475,,,704,,743737520,default
+Parallel,OpenMP static,2,3.195,3.141,3.161,3.151,1.922882,1.922882,0.0,,,704,,743737520,default
+Parallel,OpenMP static,4,1.651,1.721,1.79,1.7555,3.451438,3.570418,0.11898,,,704,,743737520,default
+Parallel,OpenMP static,8,0.904,0.98,0.898,0.939,6.452609,6.246392,-0.206217,,,704,,743737520,default
+Parallel,OpenMP static,16,0.587,0.618,0.617,0.6175,9.812146,9.990107,0.177961,,,704,,743737520,default
+FalseSharing,Naive hits[tid]++,8,0.937,0.876,0.845,0.8605,,,,19830328.96,13941062,704,,,
+FalseSharing,OpenMP reduction,8,0.86,0.857,0.862,0.8595,,,,19853401.97,13941062,704,,,
+Scheduling,static,8,0.931,0.876,0.887,0.8815,,,,,13941062,704,,743737520,default (N/k)
+Scheduling,static,8,0.89,0.901,0.904,0.9025,,,,,13941062,704,,743737520,1000
+Scheduling,dynamic,8,0.903,0.902,0.904,0.903,,,,,13941062,704,,743737520,100
+Scheduling,dynamic,8,0.893,0.852,0.848,0.85,,,,,13941062,704,,743737520,10000
+Scheduling,guided,8,0.861,0.847,0.808,0.8275,,,,,13941062,704,,743737520,exponential decay
